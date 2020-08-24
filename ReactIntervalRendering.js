@@ -12,15 +12,15 @@ class Component extends React.Component {
   }
   componentDidMount() {
     setInterval( () => {
-      if (this.state.greetingIndex == (this.greetings.length -1)) {
+      this.setState({
+        greetingIndex: this.state.greetingIndex+1
+      });
+      if (this.state.greetingIndex == (this.greetings.length)) {
         this.setState({
           greetingIndex: 0
         });
       }
-      this.setState({
-        greetingIndex: this.state.greetingIndex+1
-      });
-    }, 1000);
+    }, 2000);
   }
   render() {
     return (
